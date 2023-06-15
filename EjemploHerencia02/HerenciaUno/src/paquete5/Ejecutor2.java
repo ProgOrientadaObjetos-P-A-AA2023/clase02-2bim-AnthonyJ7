@@ -38,8 +38,8 @@ public class Ejecutor2 {
             System.out.println("Ingrese costo de créditos");
             double costo = entrada.nextInt();
 
-            EstudiantePresencial presencial = new EstudiantePresencial(n, ap, ced,
-                    edad, creditos, costo);
+            EstudiantePresencial presencial = new EstudiantePresencial(n, ap, ced, 
+                                                                       edad, creditos, costo);
             presencial.calcularMatriculaPresencial();
 
             // System.out.printf("%s\n", presencial);

@@ -5,6 +5,7 @@
  */
 package paquete6;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -21,13 +22,33 @@ public class Ejecutor2 {
         
         // Trabajo clases 16 junio 2022
         Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
         boolean bandera = true;
         String cadena = "";
         
-        while(bandera){
-            System.out.println("ingresa un saludo");
-            String saludo = entrada.nextLine();
-            cadena = String.format("%s%s\n", cadena, saludo);
+         while(bandera){
+
+            System.out.println("Ingrese nombre");
+            String n = entrada.nextLine();
+            System.out.println("Ingrese apellido");
+            String ap = entrada.nextLine();
+            System.out.println("Ingrese identificación");
+            String ced = entrada.nextLine();
+            System.out.println("Ingrese edad");
+            int edad = entrada.nextInt();
+            System.out.println("Ingrese Costo de créditos");
+            double costo = entrada.nextDouble();
+            System.out.println("Ingrese Numero de créditos");
+            int creditos = entrada.nextInt();
+            
+            EstudiantePresencial ep = new EstudiantePresencial(n, ap, ced, edad, costo , creditos);
+            
+            ep.calcularMatriculaPresencial();
+            
+            cadena = String.format("%s%s\n", cadena, ep);
+            
+            entrada.nextLine();
+                     
             System.out.println("Desea salir, pulse S");
             String opcion = entrada.nextLine();
             if(opcion.equals("S")){
